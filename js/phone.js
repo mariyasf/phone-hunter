@@ -19,7 +19,20 @@ const displayPhones = phones => {
 
     phoneContainer.textContent = '';
 
-    
+    // Show all buttom if there are more than 10 phones
+
+    const showAllContainer = document.getElementById('showAllContainer');
+    if (phones.length > 10) {
+        showAllContainer.classList.remove('hidden');
+    } else {
+        showAllContainer.classList.add('hidden');
+    }
+
+    // display only 10
+    phones = phones.slice(0, 10);
+
+
+
     phones.forEach(phone => {
         // console.log(phone);
 
